@@ -1,0 +1,42 @@
+{
+    "name": "nginx-for-windows",
+    "version": "0.0.0-beta",
+    "main": "index.js",
+    "bin": {
+        "nginx": "./bin/nginx.js"
+    },
+    "files": [
+        "build",
+        "nginx",
+        "config"
+    ],
+    "scripts": {
+        "start": "node build/index.js",
+        "nginx": "ts-node src/index.ts",
+        "dev": "nodemon src/index.ts -t",
+        "build": "rmdir /S /Q build&tsc",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "typeRoots": [
+        "./node_modules/@types",
+        "./src/types"
+    ],
+    "engines": {
+        "node": ">=4.2.0"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "@types/lodash": "^4.14.191",
+        "@types/ms": "^0.7.31",
+        "@types/node": "^18.14.6"
+    },
+    "dependencies": {
+        "commander": "^10.0.0",
+        "lodash": "^4.17.21",
+        "ms": "^2.1.3",
+        "zod": "^3.21.0"
+    }
+}
